@@ -1,4 +1,13 @@
 /**
+ * Main.java
+ * Copyright Shreyas Lad (Penetratingshot) 2019
+ *
+ * Handles the main interface for the program. Calls the appropriate subroutines for grades, attendance, students, and assignments
+ * Also holds an implementation of the keep() functions which recycles the same question if the user enters an undesirable answer
+ * keep() has since been deprecated from this project since it's hard to maintain parallel to the actual code, so discrepancies can arise which make it harder to find bugs
+ */
+
+/**
  * Things changed from pseudocode:
  *
  * Keep function isn't the only function with the main function code

@@ -7,32 +7,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d17204e5-e2be-4b26-b118-60db9f436d90" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/Attendance/AttendanceDays.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/Attendance/ManageAttendance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Data/FinalAttendance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Data/Singleton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P0rtal/com/shreyaslad/P0rtal/Alpha/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P0rtal/com/shreyaslad/P0rtal/Alpha/Singleton.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P0rtal/com/shreyaslad/P0rtal/Alpha/StudentAlphaTest1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P0rtal/com/shreyaslad/P0rtal/Commands/ManageAssignments.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P0rtal/com/shreyaslad/P0rtal/Commands/ManageAssignments.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P0rtal/com/shreyaslad/P0rtal/Commands/ManageGrades.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P0rtal/com/shreyaslad/P0rtal/Commands/ManageGrades.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P0rtal/com/shreyaslad/P0rtal/Commands/ManageStudents.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P0rtal/com/shreyaslad/P0rtal/Commands/ManageStudents.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P0rtal/com/shreyaslad/P0rtal/Data/FinalGrade$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P0rtal/com/shreyaslad/P0rtal/Data/FinalGrade$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P0rtal/com/shreyaslad/P0rtal/Data/FinalGrade$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P0rtal/com/shreyaslad/P0rtal/Data/FinalGrade$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P0rtal/com/shreyaslad/P0rtal/Data/FinalGrade$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P0rtal/com/shreyaslad/P0rtal/Data/FinalGrade$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P0rtal/com/shreyaslad/P0rtal/Data/FinalGrade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P0rtal/com/shreyaslad/P0rtal/Data/FinalGrade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P0rtal/com/shreyaslad/P0rtal/Data/FinalStudent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P0rtal/com/shreyaslad/P0rtal/Data/FinalStudent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P0rtal/com/shreyaslad/P0rtal/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P0rtal/com/shreyaslad/P0rtal/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Alpha/Singleton.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Alpha/StudentAlphaTest1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P0rtal/com/shreyaslad/P0rtal/Prompt/StringPrompt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P0rtal/com/shreyaslad/P0rtal/Prompt/StringPrompt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/Attendance/AttendanceDays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/Attendance/AttendanceDays.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/Attendance/ManageAttendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/Attendance/ManageAttendance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/ManageAssignments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/ManageAssignments.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/ManageGrades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/ManageGrades.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/ManageStudents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/ManageStudents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Data/FinalAssignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Data/FinalAssignment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Data/FinalAttendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Data/FinalAttendance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Data/FinalGrade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Data/FinalGrade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Data/FinalStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Data/FinalStudent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Prompt/StringPrompt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Prompt/StringPrompt.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,10 +35,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="542">
-              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+            <state relative-caret-position="735">
+              <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#0#4036#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
@@ -62,35 +48,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Data/FinalGrade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="23" column="65" selection-start-line="23" selection-start-column="65" selection-end-line="23" selection-end-column="65" />
+            <state relative-caret-position="118">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
               <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Data/FinalAttendance.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/ManageGrades.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="264" column="54" lean-forward="true" selection-start-line="264" selection-start-column="54" selection-end-line="264" selection-end-column="54" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
@@ -98,12 +58,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/ManageStudents.java">
+        <entry file="file://$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/ManageGrades.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="140" lean-forward="true" selection-start-line="140" selection-end-line="140" />
+            <state relative-caret-position="945">
+              <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#0#15931#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
@@ -148,21 +108,22 @@
         <option value="$PROJECT_DIR$/src/com/shreyaslad/SchoolAttendance/Commands/ManageAssignments.java" />
         <option value="$PROJECT_DIR$/src/com/shreyaslad/SchoolAttendance/Prompt/BooleanPrompt.java" />
         <option value="$PROJECT_DIR$/src/com/shreyaslad/SchoolAttendance/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Data/FinalGrade.java" />
         <option value="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Data/LocalizedWeek.java" />
         <option value="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/Attendance/EditOtherAttendance.java" />
         <option value="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/Attendance/EditTodayAttendance.java" />
         <option value="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/ManageAttendance.java" />
-        <option value="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Data/FinalStudent.java" />
-        <option value="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Data/FinalAttendance.java" />
-        <option value="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/Attendance/ManageAttendance.java" />
         <option value="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Prompt/StringPrompt.java" />
-        <option value="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Main.java" />
         <option value="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Data/Singleton.java" />
+        <option value="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Data/FinalAttendance.java" />
         <option value="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/Attendance/AttendanceDays.java" />
-        <option value="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/ManageAssignments.java" />
+        <option value="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/Attendance/ManageAttendance.java" />
         <option value="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/ManageGrades.java" />
+        <option value="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Data/FinalGrade.java" />
+        <option value="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/ManageAssignments.java" />
         <option value="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/ManageStudents.java" />
+        <option value="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Data/FinalAssignment.java" />
+        <option value="$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Data/FinalStudent.java" />
       </list>
     </option>
   </component>
@@ -186,6 +147,11 @@
             <path>
               <item name="SchoolAttendance" type="b2602c69:ProjectViewProjectNode" />
               <item name="SchoolAttendance" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SchoolAttendance" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SchoolAttendance" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SchoolAttendance" type="b2602c69:ProjectViewProjectNode" />
@@ -266,7 +232,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Language Defaults" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -357,12 +323,20 @@
       <workItem from="1561071511390" duration="48020000" />
       <workItem from="1561494420143" duration="12821000" />
       <workItem from="1561580610008" duration="7818000" />
-      <workItem from="1561611801850" duration="500000" />
+      <workItem from="1561611801850" duration="7224000" />
     </task>
+    <task id="LOCAL-00001" summary="Everything is finished now">
+      <created>1561613026439</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1561613026439</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87834000" />
+    <option name="totallyTimeSpent" value="94558000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="807" extended-state="0" />
@@ -438,7 +412,8 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="Everything is finished now" />
+    <option name="LAST_COMMIT_MESSAGE" value="Everything is finished now" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -468,26 +443,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Data/LocalizedWeek.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Data/FinalAssignment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="35" lean-forward="true" selection-start-column="35" selection-end-column="35" />
-          <folding>
-            <element signature="e#648#649#0" expanded="true" />
-            <element signature="e#697#698#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/Attendance/EditOtherAttendance.java" />
     <entry file="file://$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/Attendance/EditTodayAttendance.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Data/FinalStudent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="35" lean-forward="true" selection-start-column="35" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Prompt/StringPrompt.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -515,10 +472,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/Attendance/ManageAttendance.java">
+    <entry file="file://$PROJECT_DIR$/.idea/description.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/Attendance/AttendanceDays.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#6111#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Data/FinalStudent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
-          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+          <caret line="11" column="79" selection-start-line="11" selection-start-column="79" selection-end-line="11" selection-end-column="79" />
+          <folding>
+            <element signature="e#613#614#0" expanded="true" />
+            <element signature="e#659#660#0" expanded="true" />
+            <element signature="e#827#828#0" expanded="true" />
+            <element signature="e#873#874#0" expanded="true" />
+            <element signature="e#905#906#0" expanded="true" />
+            <element signature="e#947#948#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Data/FinalAssignment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="15" column="35" lean-forward="true" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#977#0" expanded="true" />
+            <element signature="e#538#539#0" expanded="true" />
+            <element signature="e#580#581#0" expanded="true" />
+            <element signature="e#635#636#0" expanded="true" />
+            <element signature="e#684#685#0" expanded="true" />
+            <element signature="e#728#729#0" expanded="true" />
+            <element signature="e#773#774#0" expanded="true" />
+            <element signature="e#805#806#0" expanded="true" />
+            <element signature="e#850#851#0" expanded="true" />
+            <element signature="e#924#925#0" expanded="true" />
+            <element signature="e#973#974#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Data/FinalAttendance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="e#0#2820#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/ManageStudents.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="42" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -527,19 +544,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/ManageAssignments.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="81" lean-forward="true" selection-start-line="6" selection-start-column="81" selection-end-line="6" selection-end-column="81" />
+        <state relative-caret-position="3276">
+          <caret line="156" column="30" selection-start-line="156" selection-start-column="30" selection-end-line="156" selection-end-column="30" />
           <folding>
+            <element signature="e#0#9483#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/Attendance/AttendanceDays.java">
+    <entry file="file://$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/Attendance/ManageAttendance.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+        <state relative-caret-position="630">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
           <folding>
+            <element signature="e#0#4065#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -547,10 +566,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        <state relative-caret-position="735">
+          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#0#4036#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -558,20 +577,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Data/FinalGrade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="23" column="65" selection-start-line="23" selection-start-column="65" selection-end-line="23" selection-end-column="65" />
+        <state relative-caret-position="118">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Data/FinalAttendance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -579,21 +587,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/ManageGrades.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="264" column="54" lean-forward="true" selection-start-line="264" selection-start-column="54" selection-end-line="264" selection-end-column="54" />
+        <state relative-caret-position="945">
+          <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/shreyaslad/P0rtal/Commands/ManageStudents.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="140" lean-forward="true" selection-start-line="140" selection-end-line="140" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#0#15931#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>

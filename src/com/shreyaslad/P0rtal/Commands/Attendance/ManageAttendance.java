@@ -1,4 +1,11 @@
 /**
+ * ManageAttendance.java
+ * Copyright Shreyas Lad (Peneetratingshot) 2019
+ *
+ * Manages prompts and error handing for attendance. Then calls the "manage" function in AttendanceDays.java to cut down on space
+ */
+
+/**
  * Things changed from pseudocode:
  *
  * Attendance is stored inside of a normal hashmap instead of a multudimensional array

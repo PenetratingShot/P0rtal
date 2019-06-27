@@ -1,5 +1,12 @@
 /**
- * This changed from pseudocode:
+ * AttendanceDays.java
+ * Copyright Shreyas Lad (Penetratingshot) 2019
+ *
+ * Manages the repetitive functions for editing attendance so that ManageAttendance.java is more readable
+ */
+
+/**
+ * Things changed from pseudocode:
  *
  * This wasn't planned in the pseudocode, since I took a different direction when planning it out
  * Basically it just splits up the code from ManageAssingnments. It's the same thing except I have all the repetitive functions separated so that I don't have an aneurysm scrolling through my actually important functions

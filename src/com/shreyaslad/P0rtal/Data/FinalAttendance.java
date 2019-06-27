@@ -1,4 +1,12 @@
 /**
+ * FinalAttendance.java
+ * Copyright Shreyas Lad (Penetratingshot) 2019
+ *
+ * File for managing data inside of private attendance hashmap
+ * Getter and setter functions are called from other classes and easily manage data inside of the hashmap
+ */
+
+/**
  * Create hashmap
  * Map<Integer, String>
  * Integer is the student ID, second value is type for each day, separated by ", "
@@ -44,6 +52,8 @@ public class FinalAttendance {
         return attendanceMap.containsKey(studentID);
     }
 
+    // Single parser for getting which day the user specified, then updating status manually, concatenating it into a string, and updating the value into the hashmap
+    // This is only inside of this file since switch case statements are unnecessary lines in normal code since they contain barebones subroutine calls
     public static void parse(int studentID, String day, String status) {
         String[] values = attendanceMap.get(studentID).split(", ");
 
@@ -71,6 +81,8 @@ public class FinalAttendance {
         }
     }
 
+    // Can simply call the data inside of the hashmao for any student with a valid index
+    // Doesn't have a try catch in itself, because that would be redundant
     public static String getDays(int studentID) {
         return get(studentID);
     }

@@ -1,4 +1,12 @@
 /**
+ * ManageAssignments.java
+ * Copyright Shreyas Lad (Penetratingshot) 2019
+ *
+ * Code for Managing Assignments UI. Contains error handling, viewing attendance, adding attendance, as well as editing attendance
+ * Checks to prevent NullPointerExceptions (albeit horrible ones) and calls subroutines in FinalAssingment.java to update the global list of assignments
+ */
+
+/**
  * Things changed from pseudocode:
  *
  * Changed format of options, from "1. Option" to "[1] Option". This is the same for every file, actually.
@@ -146,8 +154,7 @@ public class ManageAssignments {
             if (personAnswer) {
                 ManageAssignments.addAssignments();
             } else {
-                String[] hi = {"hi"};
-                Main.main(hi);
+                Main.main(null);
             }
         } catch (NumberFormatException ex) {
             System.out.println("\nUh oh. It looks like you entered something other than a number.");
@@ -158,8 +165,7 @@ public class ManageAssignments {
             if (personAnwer) {
                 keep3();
             } else {
-                String[] hi = {"hi"};
-                Main.main(hi);
+                Main.main(null);
             }
         }
 
@@ -226,8 +232,7 @@ public class ManageAssignments {
             if (personAnswer) {
                 ManageAssignments.manage();
             } else {
-                String[] hi = {"hi"};
-                Main.main(hi);
+                Main.main(null);
             }
         } catch (NumberFormatException ex) {
             System.out.println("\nUh oh. It looks like you entered something other than a number.");
@@ -238,8 +243,7 @@ public class ManageAssignments {
             if (personAnswer) {
                 keep3();
             } else {
-                String[] hi = {"hi"};
-                Main.main(hi);
+                Main.main(null);
             }
         }
 

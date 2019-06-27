@@ -1,4 +1,12 @@
 /**
+ * ManageStudents.java
+ * Copyright Shreyas Lad (Penetratingshot) 2019
+ *
+ * Code for managing students. Includes prompts, displaying students, adding students, editing names, and removing students
+ * Frequently makes calls to the getters and setters in the FinalStudent class, which manages the global list of students for the program
+ */
+
+/**
  * Things different from pseudocode (or rather flowchart):
  *
  * Added more prompts for managing students: "Edit Students", "Remove Students", and "Go Back"
@@ -55,6 +63,7 @@ public class ManageStudents {
         }
     }
 
+    // Grab how many students there are, formats them to the specified table constraints, and then prints it out to the console
     @SuppressWarnings("Duplicates")
     private static void viewStudents() {
         String leftAlignFormat = "| %-2s | %-45s |%n";
@@ -69,6 +78,8 @@ public class ManageStudents {
         manage();
     }
 
+    // Same thing as the function above, except meant for use in other classes
+    // Removed the manage() loop, so that other code can be executed after this runs
     @SuppressWarnings("Duplicates")
     public static void publicViewStudents() {
         String leftAlignFormat = "| %-2s | %-45s |%n";
@@ -81,6 +92,7 @@ public class ManageStudents {
         System.out.format("+----+-----------------------------------------------+%n\n");
     }
 
+    // Simply prompts the user for the name and then calls the add function in FinalStudent to update the global list of students
     public static void addStudents() {
         StringPrompt stringPrompt = new StringPrompt('>');
         String answer;
@@ -95,6 +107,8 @@ public class ManageStudents {
         manage();
     }
 
+    // Calls the function publicViewStudents to make it easier for the user to pick an ID
+    // Then calls the remove function in FinalStudent to remove the student at the same index as the ID
     @SuppressWarnings("Duplicates")
     private static void removeStudents() {
         if (FinalStudent.size() == 0) {
@@ -106,6 +120,7 @@ public class ManageStudents {
         String answer;
 
         do {
+            publicViewStudents();
             stringPrompt.setNextQuestion("ID of student (press b to go back): ");
             answer = stringPrompt.getLastAnswer();
             if (answer.equals("b")) {
@@ -128,6 +143,8 @@ public class ManageStudents {
         manage();
     }
 
+    // Prompts the user for the student ID (index in the list) and the new name of the student
+    // Then calls the edit function in FinalStudent and supplies these two parameters to update the global list of students
     @SuppressWarnings("Duplicates")
     private static void editStudents() {
         if (FinalStudent.size() == 0) {
@@ -159,6 +176,8 @@ public class ManageStudents {
         manage();
     }
 
+    // Duplicate of editStudents()
+    // Made for going back to the same question when the user enters a wrong argument. Convenience is painful :c
     @SuppressWarnings("Duplicates")
     private static void keep() {
         if (FinalStudent.size() == 0) {
@@ -166,7 +185,7 @@ public class ManageStudents {
             ManageStudents.addStudents();
         }
 
-        String[] questions = {"ID of the student", "Name of the student"};
+        String[] questions = {"ID of the student: ", "New student name: "};
         StringPrompt stringPrompt = new StringPrompt('>');
         LinkedList<String> answer;
 
@@ -190,6 +209,7 @@ public class ManageStudents {
         manage();
     }
 
+    // Recursive function for the manage() function. Why does this even exist?
     @SuppressWarnings("Duplicates")
     private static void keep2() {
         System.out.println("\nManage Students");
@@ -224,6 +244,7 @@ public class ManageStudents {
         }
     }
 
+    // Recursive function for removeStudents.
     @SuppressWarnings("Duplicates")
     private static void keep3() {
         if (FinalStudent.size() == 0) {
@@ -251,21 +272,6 @@ public class ManageStudents {
             } catch (NumberFormatException ex) {
                 keep3();
             }
-            /*if (answer.equals("b")) {
-                manage();
-            } else {
-                try {
-                    if (Integer.parseInt(answer) > FinalStudent.size()) {
-                        keep3();
-                    } else {
-                        FinalStudent.remove(Integer.parseInt(answer));
-                    }
-                } catch (NumberFormatException ex) {
-                    keep3();
-                } catch (IndexOutOfBoundsException ex) {
-                    keep3();
-                }
-            }*/
 
         } while (answer.isEmpty());
 

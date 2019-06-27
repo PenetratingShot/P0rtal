@@ -1,3 +1,18 @@
+/**
+ * FinalAssignment.java
+ * Copyright Shreyas Lad (Penetratingshot) 2019
+ *
+ * Hold the global map of assignments
+ * Getter and setter functions are defined to edit this map and so can be called from any class inside of the com.shreyaslad.P0rtal package
+ */
+
+/**
+ * Things changed from pseudocode:
+ *
+ * This is just a physical representation of the idea that there has to be a global list of assignment names that any class can edit
+ * It's in a different form to avoid passing arguments to functions and having incredibly skewed memory management
+ */
+
 package com.shreyaslad.P0rtal.Data;
 
 import java.util.LinkedList;

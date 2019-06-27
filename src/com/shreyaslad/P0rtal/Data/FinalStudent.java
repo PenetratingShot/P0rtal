@@ -1,3 +1,17 @@
+/**
+ * FinalGrade.java
+ * Copyright Shreyas Lad (Penetratingshot) 2019
+ *
+ * Holds getters and setters for managing the global list of students
+ */
+
+/**
+ * Things changed from pseudocode:
+ *
+ * This is just a physical representation of the idea that there needs to be a global list of student names.
+ * Getters and setters are used in order to manipulate this data from any class
+ */
+
 package com.shreyaslad.P0rtal.Data;
 
 import java.util.LinkedList;

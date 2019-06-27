@@ -1,4 +1,14 @@
 /**
+ * ManageGrades.java
+ * Copyright Shreyas Lad (Penetratingshot) 2019
+ *
+ * Code for managing grades for students in individual assignments
+ * Checks for Student ID, Assignment ID, and then prompts for score as "Points Earned/Points Possible"
+ * Calculates percentage from score and updates global list of grades (which is a nested hashmap)
+ * If there are no students or assignments, user is taken to the appropriate section to add some
+ */
+
+/**
  * Things changed from pseudocode:
  *
  * HashMap contains Student ID instead of student name
@@ -40,6 +50,10 @@ public class ManageGrades {
 
     private static int studentID;
 
+    // Main function which prompts user for the assignment ID
+    // Reprompts this question is user enters an undesirable answer
+
+    //CHANGELOG June 26, 2019: Made assignment selection permanent so that user doesn't have to constantly select the same assignment after they execute a subroutine
     @SuppressWarnings("Duplicates")
     public static void manage() {
 
@@ -57,12 +71,20 @@ public class ManageGrades {
                 stringPrompt.setNextQuestion("Assignment ID (press 'b' to go back): ");
                 answer = stringPrompt.getLastAnswer();
 
-                try {
-                    assignmentID = Integer.parseInt(answer);
-                } catch (IndexOutOfBoundsException ex) {
-                    System.out.println("\nThat assignment doesn't exist. Maybe try adding one?\n");
-                    manage();
+                if (answer.equals("b")) {
+                    Main.main(null);
+                } else {
+                    try {
+                        assignmentID = Integer.parseInt(answer);
+                    } catch (IndexOutOfBoundsException ex) {
+                        System.out.println("\nThat assignment doesn't exist. Maybe try adding one?\n");
+                        manage();
+                    } catch (NumberFormatException ex) {
+                        System.out.println("\nThat assignment doesn't exist. Maybe try adding one?\n");
+                        manage();
+                    }
                 }
+
             } while (answer.isEmpty());
         } catch (NumberFormatException ex) {
             if (FinalAssignment.get(0).isEmpty()) {
@@ -83,11 +105,13 @@ public class ManageGrades {
         grades();
     }
 
+    // Function for grades prompt after user selects an assignment
+    // Prompts the user and directs them to the appropriate subroutine
     private static void grades() {
 
         System.out.println("\nManage Grades\n");
         StringPrompt stringPrompt = new StringPrompt('>');
-        stringPrompt.setNextQuestion("[1] View Grades\n[2] Set grades for specific students\n[3] Set grades for all students\n[4] Set Grades\n[5] Go Back");
+        stringPrompt.setNextQuestion("[1] View Grades\n[2] Set grades for specific students\n[3] Set grades for all students\n[4] Edit Grades\n[5] Go Back and select a new assingnment");
         String answer = stringPrompt.getLastAnswer();
 
         switch (Integer.parseInt(answer)) {
@@ -104,11 +128,10 @@ public class ManageGrades {
                 editGrade();
                 break;
             case 5:
-                String[] hi = {"hi"};
-                Main.main(hi);
+                manage();
             default:
-                System.out.println("You have not entered a valid choice. You are now viewing grades.");
-                viewGrades();
+                System.out.println("You have not entered a valid choice.");
+                grades();
         }
     }
 
@@ -154,6 +177,7 @@ public class ManageGrades {
         grades();
     }
 
+    // Grabs list of grades by iterating through all student IDs and supplying the assingment ID that the user entered at the start of this class
     @SuppressWarnings("Duplicates")
     private static void viewGrades() {
 
@@ -202,12 +226,14 @@ public class ManageGrades {
                 }
                 System.out.format("+-----------------+-----------------------------------------------+--------------------------------+%n");
 
-                manage();
+                grades(); // Go back to the grades function to expose same options
             }
         }
     }
 
-    // TODO: grade calculations for this function
+    // Prompt for getting the student ID and points received/points possible and also does grade calculations
+    // Concatenates these two values into one string, and then uses setter function in FinalGrade to "replace" them in HashMap
+    // Loops through all students and prompts the user for the score for every single one of them
     private static void addAllGrades() {
         if (FinalStudent.size() == 0) {
             System.out.println("\n\nThere are no students. Go add some!\n");
@@ -239,11 +265,14 @@ public class ManageGrades {
 
             }
 
-            manage();
+            grades(); // Go back to grades function to expose same functions
         }
 
     }
 
+    // Prints out list of students and prompts users for the IDs of the students that they want to edit
+    // Prompts user for each student name (derived from ID) and points for that student
+    // Replaces current grade with points and calculation
     private static void addOneGrade() {
         if (FinalStudent.size() == 0) {
             System.out.println("\n\nThere are no students. Go add some!\n");
@@ -279,10 +308,11 @@ public class ManageGrades {
 //            parseAndAdd(i, stringPrompt.getLastAnswer());
             }
 
-            manage();
+            grades();
         }
     }
 
+    // Almost the same thing as the addOneGrade() function. There's a dedcated function with some altered text to make the user feel less confused when trying to update grades
     private static void editGrade() {
         StringPrompt stringPrompt = new StringPrompt('>');
         do {
@@ -320,6 +350,6 @@ public class ManageGrades {
 
         } while (userAnswer.isEmpty());
 
-        manage();
+        grades();
     }
 }

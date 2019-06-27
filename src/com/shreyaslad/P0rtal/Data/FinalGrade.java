@@ -1,3 +1,16 @@
+/**
+ * FinalGrade.java
+ * Copyright Shreyas Lad (Penetratingshot) 2019
+ *
+ * Holds getter and setter functions for managing data in global nested hashmap of grades
+ */
+
+/**
+ * Things changed from psuedocode:
+ *
+ * This wasn't in the pseudocode, it's just a different implementation of the same idea that you need to have global storage
+ */
+
 package com.shreyaslad.P0rtal.Data;
 
 import java.util.HashMap;
