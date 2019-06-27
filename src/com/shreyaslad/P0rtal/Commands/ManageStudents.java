@@ -1,4 +1,12 @@
-// TODO: Make removing students idiot proof
+/**
+ * Things different from pseudocode (or rather flowchart):
+ *
+ * Added more prompts for managing students: "Edit Students", "Remove Students", and "Go Back"
+ * List of students printed out as table
+ * Student ID is derived from LinkedList, not stored in the list itself
+ * Catch IndexOutOfBoundsExeception and NumberFormatException and redirect user back to question or ManageStudents entry point (manage())
+ *
+ */
 
 package com.shreyaslad.P0rtal.Commands;
 
@@ -73,7 +81,7 @@ public class ManageStudents {
         System.out.format("+----+-----------------------------------------------+%n\n");
     }
 
-    private static void addStudents() {
+    public static void addStudents() {
         StringPrompt stringPrompt = new StringPrompt('>');
         String answer;
 
@@ -127,7 +135,7 @@ public class ManageStudents {
             ManageStudents.addStudents();
         }
 
-        String[] questions = {"ID of the student", "Name of the student"};
+        String[] questions = {"ID of the student: ", "New student name: "};
         StringPrompt stringPrompt = new StringPrompt('>');
         LinkedList<String> answer;
 

@@ -1,3 +1,21 @@
+/**
+ * Things changed from pseudocode:
+ *
+ * HashMap contains Student ID instead of student name
+ * Parser functions are used to efficiently update content inside of the hashmaps
+ * Exception catching implemented — making sure that the user only inputs stuff that they're supposed to
+ * Displaying information in tables and not just text with a lot of newlines
+ * Different functions to make code more readable, portable across different classes
+ * List of students is printed out for the user before they choose what student they want to choose
+ * Checks to make sure that all students are in the HashMap
+ * Automatically add studentID and set no grade when a student is added
+ * Checks to make sure that there are students. If there are not, user is prompted to add students
+ * Grade calculation is displayed as a percent with points displayed to the left of it
+ *
+ * Honestly this was a pain to make. I never want to do it again
+ *
+ */
+
 package com.shreyaslad.P0rtal.Commands;
 
 import com.shreyaslad.P0rtal.Data.FinalAssignment;
@@ -10,9 +28,9 @@ import java.util.Arrays;
 
 /**
  * Grades will be stored in a hashmap
- * HashMap<Integer, HashMap<String, String>
+ * HashMap<Integer, HashMap<Integer, String>
  *
- * The first integer is the assignment ID, the first string is the student name, and the second string is the points for the assignment
+ * The first integer is the assignment ID, the first integer is the student ID, and the second string is the points for the assignment
  */
 
 public class ManageGrades {
@@ -25,20 +43,25 @@ public class ManageGrades {
     @SuppressWarnings("Duplicates")
     public static void manage() {
 
-        ManageAssignments.publicViewAssignments();
-
         StringPrompt stringPrompt = new StringPrompt('>');
         String answer;
 
         try {
             do {
-                stringPrompt.setNextQuestion("Assignment ID (press b to go back): ");
+                if (FinalAssignment.size() == 0) {
+                    System.out.println("\n\nThere are no assignments currently added. Go add some!\n");
+
+                    ManageAssignments.manage();
+                }
+                ManageAssignments.publicViewAssignments();
+                stringPrompt.setNextQuestion("Assignment ID (press 'b' to go back): ");
                 answer = stringPrompt.getLastAnswer();
-                if (answer.equals("b")) {
-                    String[] hi = {"hi"};
-                    Main.main(hi);
-                } else {
+
+                try {
                     assignmentID = Integer.parseInt(answer);
+                } catch (IndexOutOfBoundsException ex) {
+                    System.out.println("\nThat assignment doesn't exist. Maybe try adding one?\n");
+                    manage();
                 }
             } while (answer.isEmpty());
         } catch (NumberFormatException ex) {
@@ -50,11 +73,12 @@ public class ManageGrades {
             }
         }
 
-        for (int i = 0; i < FinalStudent.size(); i++) {
-            FinalGrade.addGrade(assignmentID, i, "None");
+        try {
+            System.out.println("\nSuccessfully selected assignment: " + FinalAssignment.get(assignmentID));
+        } catch (IndexOutOfBoundsException ex) {
+            System.out.println("\nIt looks like you entered an assignment ID that doesn't exist. Try adding one?\n");
+            manage();
         }
-
-        System.out.println("\nSuccessfully selected assignment: " + FinalAssignment.get(assignmentID));
 
         grades();
     }
@@ -63,7 +87,7 @@ public class ManageGrades {
 
         System.out.println("\nManage Grades\n");
         StringPrompt stringPrompt = new StringPrompt('>');
-        stringPrompt.setNextQuestion("[1] View Grades\n[2] Set grades for specific students\n[3] Set grades for all students\n[4] Edit Grades\n[5] Go Back");
+        stringPrompt.setNextQuestion("[1] View Grades\n[2] Set grades for specific students\n[3] Set grades for all students\n[4] Set Grades\n[5] Go Back");
         String answer = stringPrompt.getLastAnswer();
 
         switch (Integer.parseInt(answer)) {
@@ -79,6 +103,9 @@ public class ManageGrades {
             case 4:
                 editGrade();
                 break;
+            case 5:
+                String[] hi = {"hi"};
+                Main.main(hi);
             default:
                 System.out.println("You have not entered a valid choice. You are now viewing grades.");
                 viewGrades();
@@ -87,20 +114,25 @@ public class ManageGrades {
 
     @SuppressWarnings("Duplicates")
     private static void keep() {
-        ManageAssignments.publicViewAssignments();
-
         StringPrompt stringPrompt = new StringPrompt('>');
         String answer;
 
         try {
             do {
-                stringPrompt.setNextQuestion("Assignment ID (press 'b' if there are no assignments): ");
+                if (FinalAssignment.size() == 0) {
+                    System.out.println("\n\nThere are no assignments currently added. Go add some!\n");
+
+                    ManageAssignments.manage();
+                }
+                ManageAssignments.publicViewAssignments();
+                stringPrompt.setNextQuestion("Assignment ID (press 'b' to go back): ");
                 answer = stringPrompt.getLastAnswer();
-                if (answer.equals("b")) {
-                    String[] hi = {"hi"};
-                    Main.main(hi);
-                } else {
+
+                try {
                     assignmentID = Integer.parseInt(answer);
+                } catch (IndexOutOfBoundsException ex) {
+                    System.out.println("\nThat assignment doesn't exist. Maybe try adding one?\n");
+                    manage();
                 }
             } while (answer.isEmpty());
         } catch (NumberFormatException ex) {
@@ -112,78 +144,143 @@ public class ManageGrades {
             }
         }
 
-        System.out.println("\nSuccessfully selected assignment: " + FinalAssignment.get(assignmentID));
+        try {
+            System.out.println("\nSuccessfully selected assignment: " + FinalAssignment.get(assignmentID));
+        } catch (IndexOutOfBoundsException ex) {
+            System.out.println("\nIt looks like you entered an assignment ID that doesn't exist. Try adding one?\n");
+            manage();
+        }
 
         grades();
     }
 
+    @SuppressWarnings("Duplicates")
     private static void viewGrades() {
-        // Get assignment ID
-        // Loop through list of students
-        // Add ID to hasmap, then put assignment ID and student name in a nested hashmap
 
-        // Format and print out table
-        String leftAlignFormat = "| %-15s | %-45s | %-22s |%n";
-        System.out.format("+-----------------+-----------------------------------------------+------------------------+%n");
-        System.out.format("| Assignment ID   | Student Name                                  | Score                  |%n");
-        System.out.format("+-----------------+-----------------------------------------------+------------------------+%n");
-        /**
-         * 1. Loop through hashmap to get scores for one student
-         * 2. Print out student name
-         * 3. Split score by character by character '/' and put into two different variables
-         */
+        if (FinalStudent.size() == 0) {
+            System.out.println("\n\nThere are no students in this class. Go add some!\n");
 
-        //TODO: Actually format the points in terms of a percentage and letter grade. For now we can just print out the score, if it exists
-        for (int i = 0; i < FinalStudent.size(); i++) {
-            System.out.format(leftAlignFormat, assignmentID, FinalStudent.get(i), FinalGrade.get(assignmentID, i));
+            ManageStudents.manage();
+        } else {
+            try {
+                // Get assignment ID
+                // Loop through list of students
+                // Add ID to hasmap, then put assignment ID and student name in a nested hashmap
+
+                // Format and print out table
+                String leftAlignFormat = "| %-15s | %-45s | %-30s |%n";
+                System.out.format("+-----------------+-----------------------------------------------+--------------------------------+%n");
+                System.out.format("| Assignment ID   | Student Name                                  | Score                          |%n");
+                System.out.format("+-----------------+-----------------------------------------------+--------------------------------+%n");
+                /**
+                 * 1. Loop through hashmap to get scores for one student
+                 * 2. Print out student name
+                 * 3. Split score by character by character '/' and put into two different variables
+                 */
+
+                //TODO: Actually format the points in terms of a percentage and letter grade. For now we can just print out the score, if it exists
+                for (int i = 0; i < FinalStudent.size(); i++) {
+                    System.out.format(leftAlignFormat, assignmentID, FinalStudent.get(i), FinalGrade.get(assignmentID, i));
+                }
+                System.out.format("+-----------------+-----------------------------------------------+--------------------------------+%n");
+
+                manage();
+            } catch (NullPointerException ex) {
+                for (int i = 0; i < FinalStudent.size(); i++) {
+                    FinalGrade.addGrade(assignmentID, i , null);
+                }
+
+                System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+
+                String leftAlignFormat = "| %-15s | %-45s | %-30s |%n";
+                System.out.format("+-----------------+-----------------------------------------------+--------------------------------+%n");
+                System.out.format("| Assignment ID   | Student Name                                  | Score                          |%n");
+                System.out.format("+-----------------+-----------------------------------------------+--------------------------------+%n");
+
+                for (int i = 0; i < FinalStudent.size(); i++) {
+                    System.out.format(leftAlignFormat, assignmentID, FinalStudent.get(i), FinalGrade.get(assignmentID, i));
+                }
+                System.out.format("+-----------------+-----------------------------------------------+--------------------------------+%n");
+
+                manage();
+            }
         }
-        System.out.format("+-----------------+-----------------------------------------------+------------------------+%n");
     }
 
+    // TODO: grade calculations for this function
     private static void addAllGrades() {
-        System.out.println("\nEnter the points earned/total points for each student. e.g. 15/20");
+        if (FinalStudent.size() == 0) {
+            System.out.println("\n\nThere are no students. Go add some!\n");
+            ManageStudents.addStudents();
+        } else {
+            ManageStudents.publicViewStudents();
 
-        for (int i = 0; i < FinalStudent.size(); i++) {
-            StringPrompt stringPrompt = new StringPrompt('>');
-            stringPrompt.setNextQuestion("Grade for " + FinalStudent.get(i));
+            System.out.println("\nEnter the points earned/total points for each student. e.g. 15/20");
 
-            String answer = stringPrompt.getLastAnswer();
+            for (int i = 0; i < FinalStudent.size(); i++) {
+                StringPrompt stringPrompt = new StringPrompt('>');
+                stringPrompt.setNextQuestion("Grade for " + FinalStudent.get(i));
 
-            FinalGrade.addGrade(assignmentID, i, answer); // Theoretically this should work. Logic checks out
+                String answer = stringPrompt.getLastAnswer();
+
+                try {
+                    String[] answerArray = answer.split("/");
+                    double[] points = Arrays.stream(answerArray).mapToDouble(Double::parseDouble).toArray();
+
+                    String percentage = Double.toString((points[0]/points[1])*100);
+                    FinalGrade.addGrade(assignmentID, i, answer + " (" + percentage + "%" + ")"); // Theoretically this should work. Logic checks out
+                } catch (NumberFormatException ex) {
+                    System.out.println("\n\nIt looks like you didn't enter numbers when entering points\n");
+                    addAllGrades();
+                } catch (IndexOutOfBoundsException ex) {
+                    System.out.println("\n\nSomething went wrong. Try re-entering the score.");
+                    addAllGrades();
+                }
+
+            }
+
+            manage();
         }
 
-        manage();
     }
 
     private static void addOneGrade() {
-        System.out.println("\nEnter the points earned/total points for each student. e.g. 15/20");
+        if (FinalStudent.size() == 0) {
+            System.out.println("\n\nThere are no students. Go add some!\n");
+            ManageStudents.addStudents();
+        } else {
 
-        do {
-            ManageStudents.publicViewStudents();
+            do {
+                ManageStudents.publicViewStudents();
+                System.out.println("\nEnter the points earned/total points for each student. e.g. 15/20");
+                System.out.println("\nEnter the indexes of each student that you want to edit, separated by commas.\ne.g. 0,2,5\n");
+                StringPrompt stringPrompt = new StringPrompt('>');
+                stringPrompt.setNextQuestion("Indexes: ");
 
-            System.out.println("\nEnter the indexes of each student that you want to edit, separated by commas.\ne.g. 0,2,5\n");
-            StringPrompt stringPrompt = new StringPrompt('>');
-            stringPrompt.setNextQuestion("Indexes: ");
+                userAnswer = stringPrompt.getLastAnswer();
+            } while (userAnswer.isEmpty());
 
-            userAnswer = stringPrompt.getLastAnswer();
-        } while (userAnswer.isEmpty());
+            String[] answers = userAnswer.split(", ");
 
-        String[] answers = userAnswer.split(", ");
+            for (int i = 0; i < answers.length; i++) {
+                StringPrompt stringPrompt = new StringPrompt('>');
+                stringPrompt.setNextQuestion("Points for: " + FinalStudent.get(Integer.parseInt(answers[i])));
 
-        for (int i = 0; i < answers.length; i++) {
-            StringPrompt stringPrompt = new StringPrompt('>');
-            stringPrompt.setNextQuestion("Points for: " + FinalStudent.get(Integer.parseInt(answers[i])));
+                String answer = stringPrompt.getLastAnswer();
+                String[] answerArray = answer.split("/");
+                try {
+                    int[] points = Arrays.stream(answerArray).mapToInt(Integer::parseInt).toArray();
+                    int percentage = points[0] / points[1];
 
-            String answer = stringPrompt.getLastAnswer();
-            String[] answerArray = answer.split("/");
-            int[] points = Arrays.stream(answerArray).mapToInt(Integer::parseInt).toArray();
-            int percentage = points[0]/points[1];
-
-            FinalGrade.addGrade(assignmentID, Integer.parseInt(answers[i]), answer + " (" + percentage + ")");
+                    FinalGrade.addGrade(assignmentID, Integer.parseInt(answers[i]), answer + " (" + percentage + ")");
+                } catch (ArrayIndexOutOfBoundsException ex) {
+                    System.out.println();
+                }
 //            parseAndAdd(i, stringPrompt.getLastAnswer());
-        }
+            }
 
-        manage();
+            manage();
+        }
     }
 
     private static void editGrade() {
@@ -194,13 +291,14 @@ public class ManageGrades {
             stringPrompt.setNextQuestion("Student ID: ");
 
             try {
-
+                studentID = Integer.parseInt(stringPrompt.getLastAnswer());
             } catch (NumberFormatException ex) {
-
+                System.out.println("\nIt looks like you entered something other than a number.\n");
+                manage();
             } catch (IndexOutOfBoundsException ex) {
-
+                System.out.println("\nYou entered a student ID that doesn't exist.\n");
+                manage();
             }
-            studentID = Integer.parseInt(stringPrompt.getLastAnswer());
 
             System.out.println("Enter the points earned/total points for each student. e.g. 15/20");
             try {
@@ -208,7 +306,7 @@ public class ManageGrades {
 
                 String score = stringPrompt.getLastAnswer();
                 String[] stringAnswer = score.split("/");
-                int percentAnswer = (Integer.parseInt(stringAnswer[0]))/(Integer.parseInt(stringAnswer[1]));
+                int percentAnswer = (Integer.parseInt(stringAnswer[0])) / (Integer.parseInt(stringAnswer[1]));
 
                 FinalGrade.addGrade(assignmentID, studentID, score + " (" + percentAnswer + ")");
 
@@ -220,7 +318,7 @@ public class ManageGrades {
                 ManageGrades.manage();
             }
 
-        } while(userAnswer.isEmpty());
+        } while (userAnswer.isEmpty());
 
         manage();
     }

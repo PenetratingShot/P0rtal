@@ -11,6 +11,8 @@ public class FinalStudent {
 
     public static void add(String thing) {
         studentNames.add(thing);
+        int index = studentNames.indexOf(thing);
+        FinalAttendance.edit(index, "p, p, p, p, p");
     }
 
     public static void set(int index, String thing) {
@@ -19,6 +21,7 @@ public class FinalStudent {
 
     public static void remove(int index) {
         studentNames.remove(index);
+        FinalAttendance.remove(index);
     }
 
     public static String get(int index) {

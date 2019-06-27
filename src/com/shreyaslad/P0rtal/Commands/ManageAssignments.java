@@ -1,4 +1,15 @@
-// TODO: Make removing assignments idiot proof
+/**
+ * Things changed from pseudocode:
+ *
+ * Changed format of options, from "1. Option" to "[1] Option". This is the same for every file, actually.
+ * Added options "Remove Assignments" and "Go Back"
+ * Stores assignment name and derives ID based on location in list
+ * Catch IndexOutOfBounds exception and NumberFormatException when selecting assignments. Replay question and don't log assignment ID
+ * Formatting output into a table instead of with newlines
+ * Way to globally store and retrieve assignments for every single class file
+ * Calling main function with "null" as an argument
+ *
+ */
 
 package com.shreyaslad.P0rtal.Commands;
 
@@ -37,9 +48,7 @@ public class ManageAssignments {
                 editAssignments();
                 break;
             case 5:
-                String[] hi = {"hi"};
-                Main.clearScreen();
-                Main.main(hi); // Useless shitty forced arguments for main
+                Main.main(null);
                 break;
         }
     }
@@ -116,7 +125,7 @@ public class ManageAssignments {
 
     @SuppressWarnings("Duplicates")
     private static void editAssignments() {
-
+        publicViewAssignments();
         StringPrompt stringPrompt = new StringPrompt('>');
         do {
             stringPrompt.setNextQuestion("Enter the ID of the assignment: ");
@@ -135,7 +144,7 @@ public class ManageAssignments {
 
             boolean personAnswer = booleanPrompt.getLastAnswer();
             if (personAnswer) {
-                ManageAssignments.manage();
+                ManageAssignments.addAssignments();
             } else {
                 String[] hi = {"hi"};
                 Main.main(hi);
@@ -153,26 +162,6 @@ public class ManageAssignments {
                 Main.main(hi);
             }
         }
-        /*String[] questions = {"Enter the ID of the assignment: ", "Enter the new value: "};
-        StringPrompt stringPrompt = new StringPrompt('>');
-        LinkedList<String> answer;
-
-        do {
-            stringPrompt.setAndPrintQuestions(questions);
-            answer = stringPrompt.getAnswers();
-        } while (answer.isEmpty());
-
-        try {
-            int index = Integer.parseInt(answer.get(0));
-            String name = answer.get(1);
-            FinalStudent.set(index, name);
-        } catch (IndexOutOfBoundsException ex) {
-            System.out.println("\nThat assignment does not exist.\n");
-            keep();
-        } catch (NumberFormatException ex) {
-            System.out.println("\nThat is not a valid assignment name\n");
-            keep();
-        }*/
 
         manage();
     }
@@ -253,26 +242,6 @@ public class ManageAssignments {
                 Main.main(hi);
             }
         }
-        /*String[] questions = {"Enter the ID of the assignment: ", "Enter the new value: "};
-        StringPrompt stringPrompt = new StringPrompt('>');
-        LinkedList<String> answer;
-
-        do {
-            stringPrompt.setAndPrintQuestions(questions);
-            answer = stringPrompt.getAnswers();
-        } while (answer.isEmpty());
-
-        try {
-            int index = Integer.parseInt(answer.get(0));
-            String name = answer.get(1);
-            FinalStudent.set(index, name);
-        } catch (IndexOutOfBoundsException ex) {
-            System.out.println("\nThat assignment does not exist.\n");
-            keep();
-        } catch (NumberFormatException ex) {
-            System.out.println("\nThat is not a valid assignment name\n");
-            keep();
-        }*/
 
         manage();
     }

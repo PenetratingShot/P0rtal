@@ -1,3 +1,10 @@
+/**
+ * Changed from pseudocode:
+ *
+ * I didn't include this in the pseudocode since farhan didn't have access to this class
+ * Rewrote part of it to take an array of questions and return a linkedlist of answers
+ */
+
 package com.shreyaslad.P0rtal.Prompt;
 
 import java.util.LinkedList;

@@ -1,9 +1,22 @@
+/**
+ * Things changed from pseudocode:
+ *
+ * Keep function isn't the only function with the main function code
+ * Using stringprompt to create recursive prompts instead of making them myself
+ * Catching NumberFormatException to make sure that the user is only entering numbers and I can still use StringPrompt
+ * Added "P0rtal" ascii art before welcome message shows up
+ * Public variables have their own classes with getters and setters so that all classes can access them
+ *      Now, I can shift code from being just in Main to their own respective classes
+ *
+ */
+
 package com.shreyaslad.P0rtal;
 
 import com.shreyaslad.P0rtal.Commands.ManageAssignments;
+import com.shreyaslad.P0rtal.Commands.Attendance.ManageAttendance;
 import com.shreyaslad.P0rtal.Commands.ManageGrades;
 import com.shreyaslad.P0rtal.Commands.ManageStudents;
-import com.shreyaslad.P0rtal.Prompt.BooleanPrompt;
+import com.shreyaslad.P0rtal.Data.FinalAttendance;
 import com.shreyaslad.P0rtal.Prompt.StringPrompt;
 
 import java.text.DateFormat;
@@ -14,6 +27,8 @@ import java.util.Date;
 public class Main {
 
     public static void main(String[] args) {
+        FinalAttendance.reset();
+
         clearScreen(); // This doesn't work and it makes me sad :c
 
         Calendar now = Calendar.getInstance();
@@ -41,7 +56,7 @@ public class Main {
         System.out.println("Today is " + simpleDateFormat.format(date) + ", " + today + ".");
         System.out.println("Enter a number to get started.");
 
-        String options = "\n[1] Manage Assignments\n[2] Manage Grades\n[3] Manage Students\n[4] Manage Attendance\n[5] Show class progress";
+        String options = "\n[1] Manage Assignments\n[2] Manage Grades\n[3] Manage Students\n[4] Manage Attendance\n[5] Exit";
 
         StringPrompt stringPrompt = new StringPrompt('>');
         String answer;
@@ -61,38 +76,18 @@ public class Main {
                 ManageAssignments.manage();
                 break;
             case 2:
-                BooleanPrompt booleanPrompt = new BooleanPrompt('>', false);
-                System.out.println("This is very buggy and likely to break. \nOnly \"Manage Assignments\" and \"Manage Students\" have been completed.");
-                booleanPrompt.createPromptWithOneQuestion("Continue?");
-
-                boolean booleanAnswer = booleanPrompt.getLastAnswer();
-
-                if (booleanAnswer) {
-                    ManageGrades.manage();
-                } else {
-                    String[] bad = {":/"};
-                    Main.main(bad);
-                }
+                ManageGrades.manage();
                 break;
             case 3:
                 ManageStudents.manage();
                 break;
             case 4:
-                System.out.println("Work on this section has not been started yet.\nOnly \"Manage Assignments\" and \"Manage Students\" have been completed.");
-                String[] hi = {"hi"};
-                Main.main(hi);
+                // TODO: Implement check to make sure that there are students
+                ManageAttendance.manage();
                 break;
             case 5:
-                System.out.println("Work on this section has not been started yet.\nOnly \"Manage Assignments\" and \"Manage Students\" have been completed.");
-                String[] again = {"again"};
-                Main.main(again);
-                /*try {
-                    System.out.println(FinalAssignment.get(0));
-                } catch (IndexOutOfBoundsException ex) {
-                    System.out.println("There are no assignments.");
-                    String[] hi = {"hi"};
-                    main(hi);
-                }*/
+                System.out.println("\n\nGoodbye :)\n\n");
+                System.exit(0);
                 break;
             default:
                 String[] ugh = {":/"};
